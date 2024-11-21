@@ -17,13 +17,6 @@
   background-position: center;
 }
 
-.app-container {
-  position: relative;
-  overflow: hidden;
-  height: 100vh;
-  width: 100vw;
-}
-
 .content {
   position: relative;
   z-index: 1; /* Content above particles */
@@ -46,40 +39,25 @@
 }
 
 
-.left-column,
-.right-column {
-  width: 50%; /* Each column takes up half the screen */
-  height: 100%; /* Ensure each column takes up full height */
-  padding: 20px; /* Optional: Add padding for spacing */
-}
-
-.left-column{
-  z-index: 2;
-}
-
-.header-section h1, .header-section h2 {
-  margin: 0; /* Removes default margin */
-  padding: 0; /* Optional: Remove padding if needed */
-}
-
-.header-section h1 {
-  margin-bottom: 5px; /* Adjust the bottom margin of the h1 */
-}
-
-.header-section h2 {
-  margin-top: 0; /* Removes the top margin of h2 */
-  margin-bottom: 10px;
-}
-
-.right-column {
-  overflow-y: scroll;
-}
-
-.right-column {
-  width: 50%;
-  height: 100%;
-  overflow-y: scroll;
+/* Left and Right Column Styles */
+.left-column {
+  width: 40%; /* Left column takes up 40% of the width */
+  height: 100%; /* Ensure full height */
   padding: 20px;
+  z-index: 2;
+  font-size: 1.5rem;
+}
+
+.right-column {
+  width: 60%; /* Right column takes up 60% of the width */
+  height: 100%;
+  overflow-y: auto; /* Allow vertical scrolling */
+  padding: 20px;
+  z-index: 1;
+  display: flex;
+  justify-content: center;  /* Center content horizontally */
+  align-items: flex-start;  /* Align content at the top to avoid unnecessary vertical space */
+  flex-wrap: wrap;  /* Allow content to wrap if there are multiple items */
 }
 
 /* Customize scrollbar for webkit browsers */
@@ -112,13 +90,30 @@
   background-color: #f0f0f0; /* Light grey corner when both vertical and horizontal scrollbars are visible */
 }
 
+
+.header-section h1, .header-section h2 {
+  margin: 0; /* Removes default margin */
+  padding: 0; /* Optional: Remove padding if needed */
+}
+
+.header-section h1 {
+  margin-bottom: 5px; /* Adjust the bottom margin of the h1 */
+}
+
+.header-section h2 {
+  margin-top: 0; /* Removes the top margin of h2 */
+  margin-bottom: 10px;
+}
+
+
+
 /*Project Box*/
 .project-box {
   position: relative;
   width: 100%;
-  max-width: 500px;
-  max-height: 400px;
-  height: 100%;
+  max-width: 900px; /* Increase max width */
+  max-height: 600px; /* Increase max height */
+  height: auto; /* Allow the height to adjust based on content */
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -126,13 +121,14 @@
   border-radius: 20px;
   margin-bottom: 20px;
   margin-left: 20px;
-  /* Ensure the text starts hidden with opacity 0 */
+  font-size: 1.4rem;
 }
 
 /* Image Styling */
 .swiper-image {
-  width: 100%;
-  height: 100%;
+  width: 80%; /* Increase the width of the images */
+  max-width: 600px; /* Max width for larger images */
+  height: auto; /* Maintain aspect ratio */
   object-fit: cover;
   border-radius: 15px;
   transition: opacity 0.5s ease; /* Smooth fade effect */
@@ -196,7 +192,6 @@
   color: #0073b1; /* Change color on hover (LinkedIn blue) */
 }
 
-/* Optional: Add specific colors for each icon */
 .social-icons a:nth-child(1):hover { color: #333; }  /* GitHub - default color */
-.social-icons a:nth-child(2):hover { color: #0077b5; }  /* LinkedIn */
-.social-icons a:nth-child(3):hover { color: #1a3ce4; }  /* Email (red) */
+.social-icons a:nth-child(2):hover { color: #0077b5; }  
+.social-icons a:nth-child(3):hover { color: #1a3ce4; }  
