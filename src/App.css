@@ -114,7 +114,7 @@
   max-width: 900px; /* Increase max width */
   max-height: 600px; /* Increase max height */
   height: auto; /* Allow the height to adjust based on content */
-  overflow: hidden;
+  overflow-x: wrap;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -122,6 +122,11 @@
   margin-bottom: 20px;
   margin-left: 20px;
   font-size: 1.4rem;
+}
+.project-box {
+  word-wrap: break-word; /* Allows long words to wrap */
+}.project-box {
+  overflow-wrap: break-word; /* Prevents overflow by wrapping long words */
 }
 
 /* Image Styling */
