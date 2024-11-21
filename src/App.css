@@ -1,38 +1,202 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  height: 100vh; /* Full height */
+  font-family: "Dosis", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  position: relative;
+  overflow: hidden;
+  width: 100vw;
   color: white;
+  
+
+  /* Gradient background */
+  background: linear-gradient(135deg, #081118 33%, #2a6f97);
+  background-size: cover;
+  background-position: center;
 }
 
-.App-link {
-  color: #61dafb;
+.app-container {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.content {
+  position: relative;
+  z-index: 1; /* Content above particles */
+  color: rgb(255, 255, 255);
 }
+
+#tsparticles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: auto;
+}
+
+.content {
+  position: relative; /* Ensure content is above the particles */
+  z-index: 1;
+}
+
+
+.left-column,
+.right-column {
+  width: 50%; /* Each column takes up half the screen */
+  height: 100%; /* Ensure each column takes up full height */
+  padding: 20px; /* Optional: Add padding for spacing */
+}
+
+.left-column{
+  z-index: 2;
+}
+
+.header-section h1, .header-section h2 {
+  margin: 0; /* Removes default margin */
+  padding: 0; /* Optional: Remove padding if needed */
+}
+
+.header-section h1 {
+  margin-bottom: 5px; /* Adjust the bottom margin of the h1 */
+}
+
+.header-section h2 {
+  margin-top: 0; /* Removes the top margin of h2 */
+  margin-bottom: 10px;
+}
+
+.right-column {
+  overflow-y: scroll;
+}
+
+.right-column {
+  width: 50%;
+  height: 100%;
+  overflow-y: scroll;
+  padding: 20px;
+}
+
+/* Customize scrollbar for webkit browsers */
+.right-column::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+  height: 8px; /* Height of the scrollbar for horizontal scrolling (optional) */
+}
+
+/* Customize the track (the empty part of the scrollbar) */
+.right-column::-webkit-scrollbar-track {
+  background: linear-gradient(180, #2a6f97, #913992); /* Light grey background for the track */
+  border-radius: 10px; /* Round corners for the track */
+}
+
+/* Customize the thumb (the draggable part of the scrollbar) */
+.right-column::-webkit-scrollbar-thumb {
+  background-color: #2a6f97; /* Default thumb color */
+  border-radius: 10px; /* Rounded corners for the thumb */
+  border: 0.2px solid white; /* Add a border around the thumb */
+}
+
+/* Customize the thumb on hover */
+.right-column::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(236, 39, 236, 0.333); /* Darker thumb color when hovered */
+}
+
+/* Customize the scrollbar corner (optional) */
+.left-column::-webkit-scrollbar-corner,
+.right-column::-webkit-scrollbar-corner {
+  background-color: #f0f0f0; /* Light grey corner when both vertical and horizontal scrollbars are visible */
+}
+
+/*Project Box*/
+.project-box {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  max-height: 400px;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  /* Ensure the text starts hidden with opacity 0 */
+}
+
+/* Image Styling */
+.swiper-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+  transition: opacity 0.5s ease; /* Smooth fade effect */
+}
+
+/* Fade Effect on Hover */
+.swiper-image.fade-out {
+  opacity: 0; /* Reduce image opacity */
+}
+
+/* Information Overlay */
+.project-info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0; /* Start hidden */
+  border-radius: 20px;
+  padding: 20px;
+  color: white;
+  transition: opacity 0.5s ease; /* Smooth fade-in */
+  z-index: 2; /* Ensure the text is above the image */
+}
+
+/* Hover Effect on Project Box */
+.project-box:hover .project-info {
+  opacity: 1; /* Fade in the text on hover */
+}
+
+.project-info a {
+  color: white;
+  transition: color 0.5s ease;
+}
+
+.project-info a:hover {
+  color: blue;
+}
+
+
+/* Social Icons Container */
+.social-icons {
+  display: flex;
+  justify-content: center; /* Center the icons horizontally */
+  gap: 20px; /* Space between icons */
+  margin-bottom: 20px; /* Add some space below the icons */
+  z-index: 2;
+}
+
+/* Individual Icon Style */
+.social-icons a {
+  font-size: 24px; /* Icon size */
+  color: #ffffff; /* Icon color */
+  text-decoration: none; /* Remove underline from links */
+  transition: color 0.3s ease; /* Smooth color transition on hover */
+  z-index: 3;
+}
+
+/* Icon Hover Effect */
+.social-icons a:hover {
+  color: #0073b1; /* Change color on hover (LinkedIn blue) */
+}
+
+/* Optional: Add specific colors for each icon */
+.social-icons a:nth-child(1):hover { color: #333; }  /* GitHub - default color */
+.social-icons a:nth-child(2):hover { color: #0077b5; }  /* LinkedIn */
+.social-icons a:nth-child(3):hover { color: #1a3ce4; }  /* Email (red) */
