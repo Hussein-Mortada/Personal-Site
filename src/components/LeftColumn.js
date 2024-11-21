@@ -10,7 +10,7 @@ function LeftColumn() {
       <h2>Software Engineer</h2>
       </section>
       <section className="about-section">
-        <p>I started coding in late 2020 and have been enjoying it since. I enjoy creating things I love and am passionate about. I am always working on something new.
+        <p>I started coding in 2021 and have been enjoying it since. I enjoy creating things I love and am passionate about. I am always working on something new.
         </p>
         <p>Currently I am looking for full-time work as a junior engineer. I specialize in backend development but am happy to put ideas into great design through the frontend. 
         </p>
