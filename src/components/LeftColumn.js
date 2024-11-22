@@ -12,7 +12,7 @@ function LeftColumn() {
       <section className="about-section">
         <p>I started coding in 2021 and have been enjoying it since. I enjoy creating things I love and am passionate about. I am always working on something new.
         </p>
-        <p>Currently I am looking for full-time work as a junior engineer. I specialize in backend development but am happy to put ideas into great design through the frontend. 
+        <p>Currently I am looking for full-time work as a junior software engineer.
         </p>
         <p>In the past I've had the pleasure to lead a full team of developers building a website for an upcoming acupuncturist. I lead the development, design, and testing of the application, managing the rest of the developers and holding weekly code reviews, as well as frequent meetings with the client to ensure that the project met her requirements.
         </p>
